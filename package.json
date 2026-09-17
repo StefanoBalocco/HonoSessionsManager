@@ -1,0 +1,67 @@
+{
+  "name": "@stefanobalocco/honosessionsmanager",
+  "description": "Server-side sessions for Hono with pluggable storage, authenticated by a compact encrypted cookie credential.",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "BSD-3-Clause",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/index.d.ts",
+    "dist/index.js",
+    "dist/index.js.map",
+    "dist/SessionsManager.d.ts",
+    "dist/SessionsManager.js",
+    "dist/SessionsManager.js.map",
+    "dist/SessionsStorage.d.ts",
+    "dist/SessionsStorage.js",
+    "dist/SessionsStorage.js.map",
+    "dist/types.d.ts",
+    "dist/types.js",
+    "dist/types.js.map",
+    "dist/Utilities.d.ts",
+    "dist/Utilities.js",
+    "dist/Utilities.js.map"
+  ],
+  "engines": {
+    "node": "^22.20.0 || ^24.12.0 || >=26.0.0"
+  },
+  "author": "Stefano Balocco <stefano.balocco@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanoBalocco/HonoSessionsManager.git"
+  },
+  "homepage": "https://github.com/StefanoBalocco/HonoSessionsManager#readme",
+  "bugs": {
+    "url": "https://github.com/StefanoBalocco/HonoSessionsManager/issues"
+  },
+  "keywords": [
+    "hono",
+    "sessions"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsBuild all",
+    "build:library": "tsBuild library",
+    "build:tests": "tsBuild tests",
+    "tests": "c8 --include=src --include=dist --exclude-after-remap --per-file --reporter=text --reporter=lcov ava tests/dist/*.test.js --verbose --serial"
+  },
+  "peerDependencies": {
+    "hono": "^4"
+  },
+  "devDependencies": {
+    "@hono/node-server": "^2.1.0",
+    "@stefanobalocco/tsbuild": "^2",
+    "@types/node": "^22",
+    "ava": "^8",
+    "c8": "^12",
+    "hono": "^4"
+  }
+}
